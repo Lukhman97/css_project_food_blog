@@ -1,218 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .div1,.div3{
-            width:120%;
-            
-            margin-left: 70px;
-            box-sizing: content-box;
-            align-content: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Blog</title>
 
-        .div2,.div4{
-             width: 10%;           
-            display: inline-block;
-            margin-left: 70px;
-            vertical-align: top;    
-            text-align: center; 
+<style>
 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
+    text-align: center;
+    background: #ffffff;
+}
 
-            /* width:20%;
-            display: inline-block;
-            margin-left: 10px;
-            box-sizing: content-box; */
-        }
-        .div2>img,.div4>img{
-            width:100px
-        }
-        .one{
-            margin-left: 40%;
+/* ---------------- GRID ---------------- */
 
-        }
+.grid{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
 
-        .one>p{
-            text-align: center;
-           /* margin-left: 40%; */
-           display: inline-block;
-        }
-        .one>.one1{
-            background-color: black ;
-            color:white;
-            
-        }
-        .one>.one1{
-            background-color: black ;
-            color: white;
-        }
-        .div5{
-            text-align: center;
-        }
-        .footer{
-            margin-left: 20px;
-            width: 120%;
-            /* display: inline-block; */
-        }
+/* Responsive */
+@media(max-width:1024px){
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
 
-        .child1,.child2,.child3{
-            margin-left: 5%;
-            width:20%;
-            display: inline-block;
-        }
-        .last>p{
-            display: inline-block;
-        }
-        .middle,.middle1{
-            /* width: 100px ;
-            height: 300px; */
-            display: inline-block;
-            padding-left: 10px;
-        }
-        .lukh{
-            background-color: silver;
-            
-            
-        }
-        .shaik{
-            width: 200px;
-        }
+@media(max-width:600px){
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
 
-    </style>
+.card img{
+    width: 230px;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card h2{
+    font-size: 22px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.card p{
+    width: 260px;
+    margin: 10px auto;
+    font-size: 15px;
+    color: #333;
+}
+
+/* ---------------- PAGINATION ---------------- */
+
+.pagination{
+    margin: 40px 0;
+}
+
+.pagination span{
+    padding: 8px 12px;
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.active{
+    background: black;
+    color: white;
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.about{
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.about img{
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.about p{
+    width: 80%;
+    margin: 15px auto;
+    font-size: 17px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer{
+    background: #f0f0f0;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer-container{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.footer h2{
+    margin-bottom: 15px;
+}
+
+.footer p{
+    font-size: 14px;
+    color: #444;
+}
+
+/* Blog posts */
+.blog-post{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.blog-post img{
+    width: 70px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* Tags */
+.tags span{
+    display: inline-block;
+    padding: 6px 10px;
+    background: #777;
+    margin: 4px;
+    color: white;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.tags .main{
+    background: black;
+}
+
+</style>
 </head>
-        
 <body>
-    <div class="div1" >
-        <div class="div2">
-        <img src="./sandwich.jpg" alt="sanwitch recipe"  >
 
-        <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
+<!-- ---------------- IMAGE GRID ---------------- -->
+
+<div class="grid">
+
+    <div class="card">
+        <img src="sandwich.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-       </div>
-
-       <div class="div2">
-            <img src="./steak.jpg" alt="steak image" >
-            <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-        </div>
-
-        <div class="div2">
-            <img src="./cherries.jpg" alt="cherries" >
-            <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-
-        </div>
-        <div class="div2">
-            <img src="./wine.jpg" alt="wine image" >
-            <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-
-        </div>
-
     </div>
 
-<div class="div3">
-        <div class="div4">
-            <img src="./popsicle.jpg" alt="popsicle image" width="200">
-            <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-        </div>
-        <div class="div4">
-            <img src="./salmon.jpg" alt="salmon image" width="200">
-           <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-        </div>
-        <div class="div4">
-            <img src="./sandwich (1).jpg" alt="sandwitch2" width="200">
-            <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-        </div>
-        <div class="div4">
-            <img src="./croissant.jpg" alt="croissant image" width="200">
-           <h2 >The Perfect Sandwich, A Real NYC Classic</h2>
-         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
-        </div>
-
-    </div>
-<div class="one">
-       
-            <p >&lt&lt</p>
-        <p class="one1" >1&nbsp;&nbsp;&nbsp;</p>
-        <p>2&nbsp;&nbsp;&nbsp;</p>
-        <p>3&nbsp;&nbsp;&nbsp;</p>
-        <p>4&nbsp;&nbsp;&nbsp;</p>
-        <p>&gt&gt</p>
-    
+    <div class="card">
+        <img src="steak.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
     </div>
 
-    <hr>
-<div class="div5">
-    <h1>About Me, The Food Man</h1>
-    <img src="./chef.jpg" alt="chef image" width="700">
-    <h1>I am Who I Am!</h1>
-    <p>With Passion For Real, Good Food</p>
+    <div class="card">
+        <img src="cherries.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
 
-    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <div class="card">
+        <img src="wine.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
+
+    <!-- second row -->
+    <div class="card">
+        <img src="popsicle.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
+
+    <div class="card">
+        <img src="salmon.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
+
+    <div class="card">
+        <img src="sandwich (1).jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
+
+    <div class="card">
+        <img src="croissant.jpg">
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum</p>
+    </div>
 
 </div>
- <hr>
+
+<!-- ---------------- PAGINATION ---------------- -->
+
+<div class="pagination">
+    <span>&lt;&lt;</span>
+    <span class="active">1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>&gt;&gt;</span>
+</div>
+
+<hr style="width: 80%;">
+
+<!-- ---------------- ABOUT ---------------- -->
+
+<div class="about">
+    <h1>About Me, The Food Man</h1>
+    <img src="chef.jpg" alt="chef">
+    <h1>I Am Who I Am!</h1>
+    <p>With Passion For Real, Good Food</p>
+    <p>
+        Just me, myself and I, exploring the universe of unknownment. I have a heart of love
+        and an interest of lorem ipsum blog. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
+        condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+    </p>
+</div>
+
+<hr style="width: 80%;">
+
+<!-- ---------------- FOOTER ---------------- -->
 
 <div class="footer">
-<div class="child1">
-    <h2>FOOTER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-    <p>Powered by <a href="https://www.w3schools.com/">w3.css</a></p>
-</div>
-    
-    
-<div class="child1">
-    <h2>BLOG POSTS</h2>
-    <div class="middle">
-        <img src="./workshop.jpg" alt="workshop" width="70" height="50">
-    <div class="middle">
-        <h4>LOREM</h4>
-        <p>Sed mattis nunc</p>
-    </div>
-    </div>
-    <div class="middle1">
-        <img src="./gondol.jpg" alt="gondal" width="70" height="50">
-        <div class="middle1">
-            <h4>Ipsum</h4>
-            <p>Praes tinci sed</p>
-        </div>
-        
-    </div>
-</div>
+<div class="footer-container">
 
-<div class="child1">
-        <div class="shaik">
-            <div class="last">
-            <h2>POPULAR TAGS</h2>
-        
-            <p style="background-color: black; color: white;">Travel</p>
-            <p class="lukh">Newyork</p>
-            <p class="lukh">Dinner</p>
-            <p class="lukh">Salmon</p>
-            <p class="lukh">France</p>
-            <p class="lukh">Drinks</p>
-        
-        
-            <p class="lukh">Ideas</p>
-            <p class="lukh">Flavors</p>
-            <p class="lukh">Cuisine</p>
-            <p class="lukh">Chicken</p>
-            <p class="lukh">Dressing</p>
-            <p class="lukh">Field</p>
-            
-            <p class="lukh">Fish</p>
-            <p class="lukh">Duck</p>
-        </div>
-        </div>
-        
+    <div>
+        <h2>FOOTER</h2>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum.</p>
+        <p>Powered by <a href="#" style="color:#000">w3.css</a></p>
+    </div>
 
+    <div>
+        <h2>BLOG POSTS</h2>
+        <div class="blog-post">
+            <img src="workshop.jpg">
+            <div>
+                <h4>LOREM</h4>
+                <p>Sed mattis nunc</p>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <img src="gondol.jpg">
+            <div>
+                <h4>Ipsum</h4>
+                <p>Praes tinci sed</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>POPULAR TAGS</h2>
+        <div class="tags">
+            <span class="main">Travel</span>
+            <span>Newyork</span>
+            <span>Dinner</span>
+            <span>Salmon</span>
+            <span>France</span>
+            <span>Drinks</span>
+            <span>Ideas</span>
+            <span>Flavors</span>
+            <span>Cuisine</span>
+            <span>Chicken</span>
+            <span>Dressing</span>
+            <span>Field</span>
+            <span>Fish</span>
+            <span>Duck</span>
+        </div>
+    </div>
 
 </div>
+</div>
+
 </body>
 </html>
